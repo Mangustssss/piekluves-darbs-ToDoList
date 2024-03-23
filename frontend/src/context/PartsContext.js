@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react'
 
-export const PartContext = createContext()
+export const PartsContext = createContext()
 
 export const partsReducer = (state, action) => {
   switch (action.type) {
@@ -10,7 +10,7 @@ export const partsReducer = (state, action) => {
       }
     case 'CREATE_PART':
       return {
-        parts: [action.payload, ...state.parts]
+        parts: Array.isArray(state.parts) ? [action.payload, ...state.parts] : [action.payload]
       }
     case 'DELETE_PART':
       return {
@@ -27,8 +27,8 @@ export const PartsContextProvider = ({ children }) => {
   })
 
   return (
-    <PartContext.Provider value={{...state, dispatch}}>
+    <PartsContext.Provider value={{...state, dispatch}}>
       { children }
-    </PartContext.Provider>
+    </PartsContext.Provider>
   )
 }

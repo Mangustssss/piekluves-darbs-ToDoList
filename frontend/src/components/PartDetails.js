@@ -1,7 +1,6 @@
 import { usePartsContext } from '../hooks/usePartsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-// date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const PartDetails = ({ part }) => {
@@ -29,8 +28,8 @@ const PartDetails = ({ part }) => {
   return (
     <div className="part-details">
       <h4>{part.title}</h4>
-      <p><strong>Ammount: </strong>{part.ammount}</p>
-      <p><strong>Price (Eur): </strong>{part.price}</p>
+      <p><strong>Daudzums: </strong>{part.ammount}</p>
+      <p><strong>Cena (Eur): </strong>{part.price}</p>
       <p>{formatDistanceToNow(new Date(part.createdAt), { addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

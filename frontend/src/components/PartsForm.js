@@ -48,9 +48,9 @@ const PartsForm = () => {
 
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a New Part</h3>
+      <h3>Iepirkumi</h3>
 
-      <label>Part name:</label>
+      <label>Kas jāpērk?</label>
       <input 
         type="text"
         onChange={(e) => setTitle(e.target.value)}
@@ -58,7 +58,7 @@ const PartsForm = () => {
         className={emptyFields.includes('title') ? 'error' : ''}
       />
 
-      <label>Ammount:</label>
+      <label>Cik daudz:</label>
       <input 
         type="number"
         onChange={(e) => setAmmount(e.target.value)}
@@ -66,7 +66,7 @@ const PartsForm = () => {
         className={emptyFields.includes('ammount') ? 'error' : ''}
       />
 
-      <label>Price:</label>
+      <label>Cena:</label>
       <input 
         type="number"
         onChange={(e) => setPrice(e.target.value)}

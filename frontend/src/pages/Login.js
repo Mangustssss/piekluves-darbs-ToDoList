@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
 
-const Login = () => {
+export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {login, error, isLoading} = useLogin()
@@ -11,6 +11,8 @@ const Login = () => {
 
     await login(email, password)
   }
+
+ 
 
   return (
     <form className="login" onSubmit={handleSubmit}>
@@ -34,5 +36,3 @@ const Login = () => {
     </form>
   )
 }
-
-export default Login
